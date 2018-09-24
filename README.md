@@ -8,14 +8,14 @@ https://github.com/elkorn/golang-playground/tree/master/powerSeries
 
 https://github.com/jessehzj/golang-playground/tree/master/powerSeries2
 
-##powerSeries.go:
+## powerSeries.go:
 
 The basic power series calculator 
 
-##powerSeriesDemmandChan.go:
+## powerSeriesDemmandChan.go:
 power seires calculator with demand channel
 
-##reversion.go :
+## reversion.go :
 implemented reversion and arctan based on the library:[powser1.go](https://golang.org/test/chan/powser1.go)
 
 
