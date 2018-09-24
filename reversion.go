@@ -19,11 +19,6 @@
   
   package main
   
-  import (
-	"os"
-//	"fmt"
-//	"runtime"
-  )  
   type rat struct {
   	num, den int64 // numerator, denominator
   }
@@ -727,94 +722,8 @@ func Init() {
   
   func main() {
   	Init()
-  	if len(os.Args) > 1 { // print  	  	
-	print("Exp: ")
-	//Printn(Exp(Ones), 15)
-//	Printn(Recip(Mul(Exp(Ones1), Ones2)), 10)	
 	tan := Revertion(Integ(zero, MonSubst(Ones, neg(one), 2)))
 	Printn(tan, 15)
-//Printn(Mul(Ones1, Ones2), 100)  	
-//  		print("Ones: ")
-//  		Printn(Ones, 10)
-//  		print("Twos: ")
-//  		Printn(Twos, 10)
-//  		print("Add: ")
-//  		Printn(Add(Ones, Twos), 10)
-//  		print("Diff: ")
-//  		Printn(Diff(Ones), 10)
-//  		print("Integ: ")
-//  		Printn(Integ(zero, Ones), 10)
-//  		print("CMul: ")
-//  		Printn(Cmul(neg(one), Ones), 10)
-//  		print("Sub: ")
-//  		Printn(Sub(Ones, Twos), 10)
-//  		print("Mul: ")
-//  		Printn(Mul(Ones, Ones), 10)
-//  		print("Exp: ")
-//  		Printn(Exp(Ones), 15)
-//  		print("MonSubst: ")
-//  		Printn(MonSubst(Ones, neg(one), 2), 10)
-//  		print("ATan: ")
-//  		Printn(Integ(zero, MonSubst(Ones, neg(one), 2)), 10)
-  	} else { // test
-  		check(Ones, one, 5, "Ones")
-  		check(Add(Ones, Ones), itor(2), 0, "Add Ones Ones") // 1 1 1 1 1
-  		check(Add(Ones, Twos), itor(3), 0, "Add Ones Twos") // 3 3 3 3 3
-  		a := make([]*rat, N)
-  		d := Diff(Ones)
-  		for i := 0; i < N; i++ {
-  			a[i] = itor(int64(i + 1))
-  		}
-  		checka(d, a, "Diff") // 1 2 3 4 5
-  		in := Integ(zero, Ones)
-  		a[0] = zero // integration constant
-  		for i := 1; i < N; i++ {
-  			a[i] = i2tor(1, int64(i))
-  		}
-  		checka(in, a, "Integ")                               // 0 1 1/2 1/3 1/4 1/5
-  		check(Cmul(neg(one), Twos), itor(-2), 10, "CMul")    // -1 -1 -1 -1 -1
-  		check(Sub(Ones, Twos), itor(-1), 0, "Sub Ones Twos") // -1 -1 -1 -1 -1
-  		m := Mul(Ones, Ones)
-  		for i := 0; i < N; i++ {
-  			a[i] = itor(int64(i + 1))
-  		}
-  		checka(m, a, "Mul") // 1 2 3 4 5
-  		e := Exp(Ones)
-  		a[0] = itor(1)
-  		a[1] = itor(1)
-  		a[2] = i2tor(3, 2)
-  		a[3] = i2tor(13, 6)
-  		a[4] = i2tor(73, 24)
-  		a[5] = i2tor(167, 40)
-  		a[6] = i2tor(4051, 720)
-  		a[7] = i2tor(37633, 5040)
-  		a[8] = i2tor(43817, 4480)
-  		a[9] = i2tor(4596553, 362880)
-  		checka(e, a, "Exp") // 1 1 3/2 13/6 73/24
-  		at := Integ(zero, MonSubst(Ones, neg(one), 2))
-  		for c, i := 1, 0; i < N; i++ {
-  			if i%2 == 0 {
-  				a[i] = zero
-  			} else {
-  				a[i] = i2tor(int64(c), int64(i))
-  				c *= -1
-  			}
-  		}
-  		checka(at, a, "ATan") // 0 -1 0 -1/3 0 -1/5
-  		/*
-  			t := Revert(Integ(zero, MonSubst(Ones, neg(one), 2)))
-  			a[0] = zero
-  			a[1] = itor(1)
-  			a[2] = zero
-  			a[3] = i2tor(1,3)
-  			a[4] = zero
-  			a[5] = i2tor(2,15)
-  			a[6] = zero
-  			a[7] = i2tor(17,315)
-  			a[8] = zero
-  			a[9] = i2tor(62,2835)
-  			checka(t, a, "Tan")  // 0 1 0 1/3 0 2/15
-  		*/
-  	}
+
   }
   
